@@ -1,10 +1,10 @@
-import App from '@/App.vue'
+import Main from '@/pages/Main.vue'
 import {createRouter, createWebHistory} from 'vue-router';
 
 const routes = [
   {
     path: '/',
-    component: App
+    component: Main
   }
 ]
 
