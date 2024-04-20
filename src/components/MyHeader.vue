@@ -29,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
+    font-size: 1.25rem;
     cursor: pointer;
     color: white;
     background: #E6CEB6;
