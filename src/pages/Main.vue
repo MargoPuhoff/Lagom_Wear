@@ -1,7 +1,14 @@
 <template>
   <MyHeader/>
-  <div>
-    Магазин Lagom Wear
+  <div class="main">
+    <div class="main__banner">
+      
+      <div class="main__banner-p">
+        <h2>Lagom Wear | Оверсайз одежда</h2>
+        <p>Базовая женская оверсайз одежда из<br>премиального хлопка</p>
+      </div>
+      
+    </div>
   </div>
   <MyFooter/>
 </template>
@@ -20,5 +27,29 @@ export default{
 </script>
 
 <style scoped>
-  
+  *{
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  .main__banner{
+    height: 80vh;
+    position: relative;
+    background: url(@/img/png/main/banner.jpg) 100% 100% no-repeat;
+  }
+
+  .main__banner-p{
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    font-weight: 300;
+    color: white;
+  }
+
+  .main__banner-p h2{
+    font-size: 3.125rem;
+  }
+
+  .main__banner-p p{
+    font-size: 2.18rem;
+  }
 </style>

@@ -39,7 +39,6 @@
     flex-direction: column;
     align-items: center;
     font-size: 1.25rem;
-    font-family: "Ubuntu", sans-serif;
     color: white;
     background: #E6CEB6;
   }
