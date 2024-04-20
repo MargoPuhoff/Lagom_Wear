@@ -1,9 +1,9 @@
 <template>
-  <my-header/>
+  <MyHeader/>
   <div>
     Магазин Lagom Wear
   </div>
-  <my-footer/>
+  <MyFooter/>
 </template>
 
 <script>
