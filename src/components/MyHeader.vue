@@ -7,9 +7,10 @@
         
         <li>Главная</li>
         <li>Одежда</li>
-        <li>Доставка</li>
-        <li>О нас</li>
-        <li>Контакты</li>
+         <li><img src="@/img/icons/contact.svg"></li>
+        <li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/in-transit.png"/></li>
+        <li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/shopping-bag.png"/></li>
+        <li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/likes-folder.png"/></li>
         
       </ul>
     </div>
@@ -37,6 +38,7 @@
   ul{
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   
   li{

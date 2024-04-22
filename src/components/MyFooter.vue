@@ -2,8 +2,8 @@
   <div class="footer">
     
     <div class="footer__icon">
-      <img src="@/img/svg/telegram.svg">
-      <img src="@/img/svg/vk.svg">
+      <img src="@/img/icons/telegram-icon.svg">
+      <img src="@/img/icons/vk-icon.svg">
     </div>
     
     <div class="footer__menu">
@@ -19,6 +19,7 @@
     </div>
     
     <div class="footer__info">
+      <p>icon by <a href="https://icons8.com">Icons8</a></p>
       <p>© 2023 Единорог</p>
       <p>Сделано с любовью</p>
     </div>
@@ -46,10 +47,8 @@
   .footer__icon img{
     margin: 4.3rem 4.3rem 0 0;
     padding: .4rem;
-    width: 50px;
+    width: 100px;
     cursor: pointer;
-    border-radius: 50%;
-    background: white;
   }
 
   ul, .footer__info{
