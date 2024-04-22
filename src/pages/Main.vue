@@ -1,14 +1,16 @@
 <template>
   <MyHeader/>
   <div class="main">
+    
     <div class="main__banner">
-      
       <div class="main__banner-p">
         <h2>Lagom Wear | Оверсайз одежда</h2>
         <p>Базовая женская оверсайз одежда из<br>премиального хлопка</p>
       </div>
-      
     </div>
+    
+    <CardList/>
+    
   </div>
   <MyFooter/>
 </template>
@@ -16,11 +18,13 @@
 <script>
 import MyFooter from "@/components/MyFooter.vue"
 import MyHeader from "@/components/MyHeader.vue"
+import CardList from "@/components/CardList.vue"
+  
   
 export default{
   
   components:{
-    MyFooter, MyHeader
+    MyFooter, MyHeader, CardList
   } 
   
 }
@@ -34,7 +38,7 @@ export default{
   .main__banner{
     height: 80vh;
     position: relative;
-    background: url(@/img/png/main/banner.jpg) 100% 100% no-repeat;
+    background: url(@/img/jpg/banner.jpg) 100% 100% no-repeat;
   }
 
   .main__banner-p{
