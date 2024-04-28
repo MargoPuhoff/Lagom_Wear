@@ -20,7 +20,6 @@ import MyFooter from "@/components/MyFooter.vue"
 import MyHeader from "@/components/MyHeader.vue"
 import CardList from "@/components/CardList.vue"
   
-  
 export default{
   
   components:{
@@ -31,10 +30,6 @@ export default{
 </script>
 
 <style scoped>
-  *{
-    font-family: "Ubuntu", sans-serif;
-  }
-
   .main__banner{
     height: 80vh;
     position: relative;
