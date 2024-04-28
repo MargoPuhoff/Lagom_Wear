@@ -5,8 +5,8 @@
     <div>
       <ul>
         
-        <li>Главная</li>
-        <li>Одежда</li>
+        <router-link to="/"><li>Главная</li></router-link>
+        <router-link to="/catalog"><li>Одежда</li></router-link>
          <li><img src="@/img/icons/contact.svg"></li>
         <li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/in-transit.png"/></li>
         <li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/shopping-bag.png"/></li>
@@ -44,5 +44,10 @@
   li{
     padding-left: 1.8rem;
     list-style: none;
+    color: white;
+  }
+
+  a{
+    text-decoration-line: none;
   }
 </style>
