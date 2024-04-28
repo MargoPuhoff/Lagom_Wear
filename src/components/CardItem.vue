@@ -1,17 +1,17 @@
 <template>
-    <div class="card__item">
+  <div class="card__item">
       
-      <div class="card__item-img">
-        <img :src="imgUrl">
-      </div>
-      
-      <div class="card__item-info">
-        <p>Размер</p>
-        <b>{{ title }}</b>
-        <p>{{ price }}</p>
-      </div>
-      
+    <div class="card__item-img">
+      <img :src="imgUrl">
     </div>
+      
+    <div class="card__item-info">
+      <p>Размер</p>
+      <b>{{ title }}</b>
+      <p>{{ price }}</p>
+    </div>
+      
+  </div>
 </template>
 
 <script setup>

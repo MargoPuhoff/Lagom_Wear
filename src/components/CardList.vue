@@ -1,12 +1,10 @@
 <template>
-  <div class="card__list">
-    
-    <p>Наши новинки</p>
+
     <div class="card__list-item">
       <CardItem 
         title="Название"
         :price="1500"
-        imgUrl="https://img.freepik.com/free-photo/beautiful-blonde-girl-white-oversized-tshirt-blue-jeans-posing-gray-background_89887-917.jpg?t=st=1714309875~exp=1714313475~hmac=c22ab260a53359ca4622322f161c139cd1d6d36eda2ff6ec29dfa44d98e7acd5&w=740"/>
+        imgUrl="https://img.freepik.com/free-photo/beautiful-blonde-girl-white-oversized-tshirt-blue-jeans-posing-gray-background_89887-922.jpg?t=st=1714319485~exp=1714323085~hmac=f891ac795b654190a95cefbcba013fe3928de1f620c6a804d1b1b3f80d176c71&w=740"/>
       <CardItem
         title="Название"
         :price="1500"
@@ -17,22 +15,23 @@
         imgUrl="https://img.freepik.com/free-photo/man-posing-with-sunglasses-medium-shot_23-2149409751.jpg?t=st=1714309960~exp=1714313560~hmac=634138c5610d3f23cae4f0c36f11c36434cc85209159ec69d971f66c5b8a595d&w=740"/>
     </div>
 
-  </div>
 </template>
 
 <script>
 import CardItem from "@/components/CardItem.vue"
+import MyHeading from "@/components/UI/MyHeading.vue"
 
 export default{
   
   components: {
-    CardItem  
+    CardItem, MyHeading  
   }
   
 }
 </script>
 
 <style scoped>
+  
   .card__list{
     padding: 8rem;
     display: flex;
@@ -41,13 +40,10 @@ export default{
     align-items: center;
     background: #807A80;
   }
-
-  p{
-    font-size: 3.125rem;
-  }
-
+  
   .card__list-item{
     padding-top: 7.6rem;
+    padding-bottom: 7.6rem;
     width: 70%;
     display: flex;
     justify-content: space-between;
