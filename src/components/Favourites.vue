@@ -6,15 +6,24 @@
       <h2>Ваши сохраненки</h2>
       <img width="50" height="50" src="https://img.icons8.com/bubbles/50/close-window.png"/>
     </div>
+    <div class="favourite__items">
+      <FavouriteItem/>
+    </div>
     
   </div>
 </template>
 
 <script>
-  
+import FavouriteItem from "@/components/FavouriteItem.vue"
+
+export default{
+  components: {
+    FavouriteItem
+  }    
+}
 </script>
 
-<style>
+<style scoped>
   .favorites__back{
     height: 100vh;
     width: 100%;
@@ -50,5 +59,11 @@
 
   .favorites__head img:hover{
     opacity: 1;
+  }
+
+  .favourite__items{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
   }
 </style>

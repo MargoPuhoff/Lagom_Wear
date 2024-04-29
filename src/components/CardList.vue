@@ -3,6 +3,7 @@
     <div class="card__list-item">
       <CardItem
         :isFavorite="false"
+        :size="42"
         title="Название"
         :price="1500"
         imgUrl="https://img.freepik.com/free-photo/beautiful-blonde-girl-white-oversized-tshirt-blue-jeans-posing-gray-background_89887-922.jpg?t=st=1714319485~exp=1714323085~hmac=f891ac795b654190a95cefbcba013fe3928de1f620c6a804d1b1b3f80d176c71&w=740"/>

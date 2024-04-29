@@ -7,7 +7,7 @@
       
     <div class="card__item-info">
       <div class="item-info">
-        <p>Размер</p>
+        <p>{{ size }}</p>
         <b>{{ title }}</b>
         <p>{{ price }}</p>
       </div>
@@ -32,6 +32,7 @@
     imgUrl: String,
     title: String,
     price: Number,
+    size: Number,
     isFavorite: Boolean,
     onClickFavorite: Function
   })
