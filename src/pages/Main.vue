@@ -1,5 +1,6 @@
 <template>
   <MyHeader/>
+  <Favourites/>
   <div class="main">
     
     <div class="main__banner">
@@ -24,11 +25,13 @@ import MyFooter from "@/components/MyFooter.vue"
 import MyHeader from "@/components/MyHeader.vue"
 import CardList from "@/components/CardList.vue"
 import MyHeading from "@/components/UI/MyHeading.vue"
+import Favourites from "@/components/Favourites.vue"
   
 export default{
   
   components:{
-    MyFooter, MyHeader, CardList, MyHeading
+    MyFooter, MyHeader, 
+    CardList, MyHeading, Favourites
   } 
   
 }
