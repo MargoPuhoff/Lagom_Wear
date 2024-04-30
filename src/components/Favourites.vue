@@ -6,9 +6,14 @@
       <h2>Ваши сохраненки</h2>
       <img width="50" height="50" src="https://img.icons8.com/bubbles/50/close-window.png"/>
     </div>
+    
     <div class="favourite__items">
       <FavouriteItem/>
     </div>
+    
+    <my-button class="favourite__btn">
+      Перейти к боту
+    </my-button>
     
   </div>
 </template>
@@ -39,11 +44,14 @@ export default{
     height: 100vh;
     width: 20%;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    
     top: 0;
     right: 0;
     color: #66433F;
     background: #E6CEB6;
-    z-index: 99
+    z-index: 99;
   }
   
   .favorites__head{
