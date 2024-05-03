@@ -1,6 +1,6 @@
 <template>
   <MyHeader/>
-  <Favourites/>
+  <!--<Favourites/>-->
   <div class="main">
     
     <div class="main__banner">
@@ -14,27 +14,56 @@
   
   <div class="card__list">
     <MyHeading title="Наши новинки"/>
-    <CardList/>
+    <CardList 
+      :items="items"/>
   </div>
   
   <MyFooter/>
 </template>
 
-<script>
-import MyFooter from "@/components/MyFooter.vue"
-import MyHeader from "@/components/MyHeader.vue"
-import CardList from "@/components/CardList.vue"
-import MyHeading from "@/components/UI/MyHeading.vue"
-import Favourites from "@/components/Favourites.vue"
+<script setup>
+  import {onMounted, ref} from "vue"
+
+  import MyFooter from "@/components/MyFooter.vue"
+  import MyHeader from "@/components/MyHeader.vue"
+  import CardList from "@/components/CardList.vue"
+  import MyHeading from "@/components/UI/MyHeading.vue"
+  import Favourites from "@/components/Favourites.vue"
+  import axios from "axios"
+
+  const items = ref([]); 
+    
+  onMounted(async () => {
+    try {
+      const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
+      items.value = response.data
+    } catch (error) {
+      console.log(error);
+    }
+  });
   
-export default{
+/*export default{
   
   components:{
     MyFooter, MyHeader, 
     CardList, MyHeading, Favourites
-  } 
+  },
+
+  async fetchCards() {
+    try {
+      const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
+      console.log(response)
+    } catch (error) {
+      alert('Ошибочка')
+    } 
+  },
   
-}
+  //mounted(){
+  //  this.fetchCards()
+  //},  
+  
+} */
+  
 </script>
 
 <style scoped>

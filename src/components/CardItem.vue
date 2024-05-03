@@ -32,7 +32,7 @@
     imgUrl: String,
     title: String,
     price: Number,
-    size: Number,
+    size: String,
     isFavorite: Boolean,
     onClickFavorite: Function
   })

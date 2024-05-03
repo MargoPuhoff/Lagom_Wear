@@ -3,29 +3,38 @@
   
   <div class="card__list">
     <MyHeading title="Наши новинки"/>
-    <CardList/>
+    <CardList 
+      :items="items"/>
     <MyHeading title="Новая колекция "/>
-    <CardList/>
+    <CardList 
+      :items="items"/>
     <MyHeading title="Наши хиты"/>
-    <CardList/>
+    <CardList 
+      :items="items"/>
   </div>
   
   <MyFooter/>
 </template>
 
-<script>
-import MyFooter from "@/components/MyFooter.vue"
-import MyHeader from "@/components/MyHeader.vue"
-import CardList from "@/components/CardList.vue"
-import MyHeading from "@/components/UI/MyHeading.vue"
+<script setup>
+  import {onMounted, ref} from "vue"
+  
+  import MyFooter from "@/components/MyFooter.vue"
+  import MyHeader from "@/components/MyHeader.vue"
+  import CardList from "@/components/CardList.vue"
+  import MyHeading from "@/components/UI/MyHeading.vue"
+  import axios from "axios"
+  
+  const items = ref([]); 
 
-export default{
-
-  components:{
-    MyFooter, MyHeader, CardList, MyHeading
-  } 
-
-}
+  onMounted(async () => {
+    try {
+      const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
+      items.value = response.data
+    } catch (error) {
+      console.log(error);
+    }
+  });
 </script>
 
 <style scoped>
