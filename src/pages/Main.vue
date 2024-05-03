@@ -32,14 +32,42 @@
   import axios from "axios"
 
   const items = ref([]); 
-    
-  onMounted(async () => {
+  
+/*  const fetchFavorite = async () => {
     try {
-      const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
-      items.value = response.data
+      
+      const {data: favorites} = await axios.get('https://460e28092cf83f01.mokky.dev/favorites');
+      
+      items.value = items.value.map(item => {
+        const favorite = favorites.find(favorite => favorite.parentId === item.id)
+      })
+
+      if(!favorites){
+        return items
+      }
+
+      return{
+        ...items,
+        isFavorite:true
+      }
+      console.log(items.value)
     } catch (error) {
       console.log(error);
     }
+  } */
+    
+  const fetchCard = async () => {
+    try {
+      const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
+      items.value = response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  onMounted(async () => {
+    await fetchCard();
+    /*await fetchFavorite();*/
   });
   
 /*export default{

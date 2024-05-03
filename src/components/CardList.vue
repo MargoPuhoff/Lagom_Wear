@@ -8,7 +8,7 @@
         :size="item.size"
         :price="item.price"
         :imgUrl="item.imgUrl"
-        :isFavorite="true"/>
+        :isFavorite="item.isFavorite"/>
     </div>
 
 </template>
