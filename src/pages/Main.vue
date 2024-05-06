@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-  import {onMounted, ref} from "vue"
+  import {onMounted, ref, provide} from "vue"
 
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
@@ -33,7 +33,7 @@
 
   const items = ref([]); 
   
-/*  const fetchFavorite = async () => {
+  const fetchFavorite = async () => {
     try {
       
       const {data: favorites} = await axios.get('https://460e28092cf83f01.mokky.dev/favorites');
@@ -48,27 +48,37 @@
 
       return{
         ...items,
-        isFavorite:true
+        isFavorite: true,
+        favoriteId: favorite.parentId
       }
       console.log(items.value)
     } catch (error) {
       console.log(error);
     }
-  } */
-    
+  }; 
+
   const fetchCard = async () => {
     try {
       const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
-      items.value = response.data;
+      items.value = response.data.map((obj) => ({
+        ...obj,
+        isFavorite: false
+      }));
     } catch (error) {
       console.log(error);
     }
   };
+  
+  const addFavorite = async (item) => {
+    item.isFavorite = !item.isFavorite;
+  };
 
   onMounted(async () => {
     await fetchCard();
-    /*await fetchFavorite();*/
+    await fetchFavorite();
   });
+
+  provide('addFavorite', addFavorite)
   
 /*export default{
   

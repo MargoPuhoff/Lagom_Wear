@@ -14,7 +14,7 @@
       
       <div class="item-icon">
         <img
-          @click="onClickFavorite"
+          @click="addFavorite"
           width="50" height="50" 
           :src="!isFavorite ? 'https://img.icons8.com/bubbles/50/hearts.png' : 'https://img.icons8.com/bubbles/50/filled-like.png'"/>
       </div>
@@ -24,10 +24,6 @@
 </template>
 
 <script setup>
-  const onClickFavorite = () => {
-    alert("Товар добавлен в избранное!")
-  }
-  
   defineProps({
     imgUrl: String,
     title: String,
