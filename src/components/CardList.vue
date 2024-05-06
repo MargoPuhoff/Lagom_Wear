@@ -20,20 +20,7 @@
   defineProps({
     items: Array
   })
-
-/*export default{
   
-  components: {
-    CardItem, MyHeading  
-  },
-
-  data(){
-    return{
-      cards: []
-    }
-  }
-  
-} */
 </script>
 
 <style scoped>

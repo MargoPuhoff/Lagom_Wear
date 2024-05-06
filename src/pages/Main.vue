@@ -38,19 +38,20 @@
       
       const {data: favorites} = await axios.get('https://460e28092cf83f01.mokky.dev/favorites');
       
-      items.value = items.value.map(item => {
-        const favorite = favorites.find(favorite => favorite.parentId === item.id)
-      })
+      items.value = items.value.map((item) => {
+        const favorite = favorites.find((favorite) => favorite.parentId === item.id)
 
-      if(!favorites){
-        return items
-      }
-
-      return{
-        ...items,
-        isFavorite: true,
-        favoriteId: favorite.parentId
-      }
+        if(!favorite){
+          return item
+        }
+        
+        return{
+          ...item,
+          isFavorite: true,
+          favoriteId: favorite.id
+        }
+        
+      })      
       console.log(items.value)
     } catch (error) {
       console.log(error);
@@ -79,28 +80,6 @@
   });
 
   provide('addFavorite', addFavorite)
-  
-/*export default{
-  
-  components:{
-    MyFooter, MyHeader, 
-    CardList, MyHeading, Favourites
-  },
-
-  async fetchCards() {
-    try {
-      const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
-      console.log(response)
-    } catch (error) {
-      alert('Ошибочка')
-    } 
-  },
-  
-  //mounted(){
-  //  this.fetchCards()
-  //},  
-  
-} */
   
 </script>
 
