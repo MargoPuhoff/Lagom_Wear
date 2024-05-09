@@ -15,7 +15,8 @@
   <div class="card__list">
     <MyHeading title="Наши новинки"/>
     <CardList 
-      :items="items"/>
+      :items="items"
+      @addToFavorite="addToFavorite"/>
   </div>
   
   <MyFooter/>
@@ -58,6 +59,10 @@
     }
   }; 
 
+  const addToFavorite = async (item) => {
+    item.isFavorite = !item.isFavorite;
+  };
+
   const fetchCard = async () => {
     try {
       const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
@@ -69,17 +74,13 @@
       console.log(error);
     }
   };
-  
-  const addFavorite = async (item) => {
-    item.isFavorite = !item.isFavorite;
-  };
 
   onMounted(async () => {
     await fetchCard();
     await fetchFavorite();
   });
 
-  provide('addFavorite', addFavorite)
+  provide('addToFavorite', addToFavorite);
   
 </script>
 

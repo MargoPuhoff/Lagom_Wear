@@ -14,7 +14,7 @@
       
       <div class="item-icon">
         <img
-          @click="addFavorite"
+          @click="onClickFavorite"
           width="50" height="50" 
           :src="!isFavorite ? 'https://img.icons8.com/bubbles/50/hearts.png' : 'https://img.icons8.com/bubbles/50/filled-like.png'"/>
       </div>
@@ -25,13 +25,14 @@
 
 <script setup>
   defineProps({
+    id: Number,
     imgUrl: String,
     title: String,
     price: Number,
     size: String,
     isFavorite: Boolean,
     onClickFavorite: Function
-  })
+  });
 </script>
 
 <style scoped>

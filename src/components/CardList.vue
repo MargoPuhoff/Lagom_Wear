@@ -4,23 +4,28 @@
       <CardItem
         v-for="item in items"
         :key="item.id"
+        :id="item.id"
         :title="item.title"
         :size="item.size"
         :price="item.price"
         :imgUrl="item.imgUrl"
-        :isFavorite="item.isFavorite"/>
+        :isFavorite="item.isFavorite"
+        :onClickFavorite="() => addToFavorite(item)"/>
     </div>
 
 </template>
 
 <script setup>
+  import {inject} from "vue"
+  
   import CardItem from "@/components/CardItem.vue"
   import MyHeading from "@/components/UI/MyHeading.vue"
 
   defineProps({
     items: Array
   })
-  
+
+  const addToFavorite = inject('addToFavorite')
 </script>
 
 <style scoped>
