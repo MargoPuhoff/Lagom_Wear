@@ -10,14 +10,12 @@
         :price="item.price"
         :imgUrl="item.imgUrl"
         :isFavorite="item.isFavorite"
-        :onClickFavorite="() => addToFavorite(item)"/>
+        :onClickFavorite="() => emit('addToFavorite', item)"/>
     </div>
 
 </template>
 
 <script setup>
-  import {inject} from "vue"
-  
   import CardItem from "@/components/CardItem.vue"
   import MyHeading from "@/components/UI/MyHeading.vue"
 
@@ -25,7 +23,7 @@
     items: Array
   })
 
-  const addToFavorite = inject('addToFavorite')
+  const emit = defineEmits(['addToFavorite']);
 </script>
 
 <style scoped>
