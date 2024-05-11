@@ -4,7 +4,10 @@
     
     <div class="favorites__head">
       <h2>Ваши сохраненки</h2>
-      <img width="50" height="50" src="https://img.icons8.com/bubbles/50/close-window.png"/>
+      <img
+        @click="() => emit('closeFavorite')"
+        width="50" height="50" 
+        src="https://img.icons8.com/bubbles/50/close-window.png"/>
     </div>
     
     <div class="favourite__items">
@@ -18,14 +21,10 @@
   </div>
 </template>
 
-<script>
-import FavouriteItem from "@/components/FavouriteItem.vue"
+<script setup>
+  import FavouriteItem from "@/components/FavouriteItem.vue"
 
-export default{
-  components: {
-    FavouriteItem
-  }    
-}
+  const emit = defineEmits(['closeFavorite']);
 </script>
 
 <style scoped>

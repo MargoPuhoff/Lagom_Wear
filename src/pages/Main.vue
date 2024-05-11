@@ -1,6 +1,9 @@
 <template>
-  <MyHeader/>
-  <!--<Favourites/>-->
+  <MyHeader
+    @openFavorite="openFavorite"/>
+  <Favourites 
+    v-if="favoriteOpen"
+    @closeFavorite="closeFavorite"/>
   <div class="main">
     
     <div class="main__banner">
@@ -23,7 +26,7 @@
 </template>
 
 <script setup>
-  import {onMounted, ref, provide} from "vue"
+  import {onMounted, ref} from "vue"
 
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
@@ -33,6 +36,14 @@
   import axios from "axios"
 
   const items = ref([]); 
+  const favoriteOpen = ref(false);
+  
+  const closeFavorite = () => {
+    favoriteOpen.value = false
+  };
+  const openFavorite = () => {
+    favoriteOpen.value = true
+  };
   
   const fetchFavorite = async () => {
     try {
@@ -60,7 +71,22 @@
   }; 
 
   const addToFavorite = async (item) => {
-    item.isFavorite = !item.isFavorite;
+    try {
+      item.isFavorite = !item.isFavorite;
+      
+      if (!item.isFavorite) {
+        const obj = {
+          parentId: item.id,
+        };
+        const {data} = await axios.post('https://460e28092cf83f01.mokky.dev/favorites', obj);
+        item.favoriteId = data.id;
+      } else {
+        await axios.delete(`https://460e28092cf83f01.mokky.dev/favorites/${item.favoriteId}`);
+        item.favoriteId = null;
+      };
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const fetchCard = async () => {
@@ -68,7 +94,8 @@
       const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
       items.value = response.data.map((obj) => ({
         ...obj,
-        isFavorite: false
+        isFavorite: false,
+        favoriteId: null
       }));
     } catch (error) {
       console.log(error);
@@ -79,8 +106,6 @@
     await fetchCard();
     await fetchFavorite();
   });
-
-  provide('addToFavorite', addToFavorite);
   
 </script>
 
