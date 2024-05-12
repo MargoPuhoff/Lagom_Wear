@@ -44,6 +44,7 @@
     width: 70%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   
 </style>

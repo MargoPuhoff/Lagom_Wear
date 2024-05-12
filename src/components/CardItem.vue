@@ -37,6 +37,7 @@
 
 <style scoped>
   .card__item{
+    padding-bottom: 2rem;
     width: 19rem;
   }
 

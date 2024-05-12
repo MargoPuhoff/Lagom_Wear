@@ -2,12 +2,12 @@
   <MyHeader/>
   
   <div class="card__list">
-    <MyHeading title="Наши новинки"/>
+    <!--<MyHeading title="Наши новинки"/>
     <CardList 
       :items="items"/>
     <MyHeading title="Новая колекция "/>
     <CardList 
-      :items="items"/>
+      :items="items"/>-->
     <MyHeading title="Наши хиты"/>
     <CardList 
       :items="items"/>
@@ -29,7 +29,7 @@
 
   onMounted(async () => {
     try {
-      const response = await axios.get('https://460e28092cf83f01.mokky.dev/items');
+      const response = await axios.get('https://460e28092cf83f01.mokky.dev/catalog');
       items.value = response.data
     } catch (error) {
       console.log(error);
