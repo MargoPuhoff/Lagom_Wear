@@ -11,7 +11,9 @@
     </div>
     
     <div class="favourite__items">
-      <FavouriteItem/>
+      <CardList 
+      :items="favorite"
+      class="card__item"/>
     </div>
     
     <my-button class="favourite__btn">
@@ -22,9 +24,25 @@
 </template>
 
 <script setup>
-  import FavouriteItem from "@/components/FavouriteItem.vue"
+  import {onMounted, ref} from "vue"
+  
+  import axios from "axios"
+  import CardList from "@/components/CardList.vue"
 
   const emit = defineEmits(['closeFavorite']);
+  const favortie = ref([]);
+
+  onMounted(async () =>{
+    try {
+      const {data} = await axios.get(
+        'https://460e28092cf83f01.mokky.dev/favorites?_relations=users'
+      );
+
+      favortie.value = data.map((obj) => obj.item);
+    } catch (error) {
+      console.log(error)
+    }
+  });
 </script>
 
 <style scoped>

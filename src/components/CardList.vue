@@ -20,7 +20,8 @@
   import MyHeading from "@/components/UI/MyHeading.vue"
 
   defineProps({
-    items: Array
+    items: Array,
+    favorite: Array
   })
 
   const emit = defineEmits(['addToFavorite']);
