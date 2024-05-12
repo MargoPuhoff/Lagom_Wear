@@ -1,10 +1,40 @@
 <template>
-  <!--<CardList 
-  :items="favorites"
-  class="card__item"/>-->
+  <div class="card__item">
+
+    <div class="card__item-img">
+      <img :src="imgUrl">
+    </div>
+
+    <div class="card__item-info">
+      <div class="item-info">
+        <p>{{ size }}</p>
+        <b>{{ title }}</b>
+        <p>{{ price }}</p>
+      </div>
+    </div>
+
+    <div class="card__item-icon">
+      <img
+        @click="onClickFavorite"
+        width="50" height="50" 
+        :src="!isFavorite ? 'https://img.icons8.com/bubbles/50/hearts.png' : 'https://img.icons8.com/bubbles/50/filled-like.png'"/>
+    </div>
+
+  </div>
 </template>
 
 <script setup>
+  
+  defineProps({
+    id: Number,
+    imgUrl: String,
+    title: String,
+    price: Number,
+    size: String,
+    isFavorite: Boolean,
+    onClickFavorite: Function
+  });
+  
   /*import {onMounted, ref} from "vue"
   import axios from "axios"
   import CardList from "@/components/CardList.vue"
@@ -30,6 +60,7 @@
     margin-top: 1.2rem;
     width: 100%;
     display: flex;
+    felx-direction: row;
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
@@ -37,7 +68,7 @@
   }
 
   .card__item-img{
-    width: 45%;
+    width: 50%;
     height: 15vh;
     cursor: pointer;
   }
@@ -46,6 +77,10 @@
     width: 100%;
     height: 100%;
     border-radius: 15px;
+  }
+
+  .card__item-info{
+    padding-left: .6rem;
   }
 
   .card__item-info b{

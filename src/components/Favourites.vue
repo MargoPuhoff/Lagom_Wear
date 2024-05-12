@@ -11,9 +11,15 @@
     </div>
     
     <div class="favourite__items">
-      <CardList 
-      :items="favorite"
-      class="card__item"/>
+      <FavoriteItem
+        v-for="item in card"
+        :key="item.id"
+        :title="item.title"
+        :size="item.size"
+        :price="item.price"
+        :img-url="item.imgUrl"
+        :is-favorite="item.isFavorite"
+        :onClickFavorite="() => emit('addToFavorite', item)"/>
     </div>
     
     <my-button class="favourite__btn">
@@ -24,12 +30,15 @@
 </template>
 
 <script setup>
-  import {onMounted, ref} from "vue"
+  import {onMounted, ref, inject} from "vue"
   
   import axios from "axios"
-  import CardList from "@/components/CardList.vue"
+  import FavoriteItem from "@/components/FavoriteItem.vue"
 
-  const emit = defineEmits(['closeFavorite']);
+  const emit = defineEmits(['closeFavorite', 'addToFavorite']);
+  const {card} = inject('card');
+
+/*  const emit = defineEmits(['closeFavorite']);
   const favortie = ref([]);
 
   onMounted(async () =>{
@@ -42,7 +51,7 @@
     } catch (error) {
       console.log(error)
     }
-  });
+  });*/
 </script>
 
 <style scoped>

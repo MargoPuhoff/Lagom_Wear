@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-  import {onMounted, ref} from "vue"
+  import {onMounted, ref, provide} from "vue"
 
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
@@ -73,7 +73,7 @@
     }
   }; 
 
-  const addToFavorite = async (item) => {
+/*  const addToFavorite = async (item) => {
     try {
       item.isFavorite = !item.isFavorite;
       
@@ -97,8 +97,23 @@
     } catch (error) {
       console.log(error)
     }
-  };
-
+  }; */
+  const addToFavorite = (item) => {
+    try {
+      item.isFavorite = !item.isFavorite;
+      
+      if (item.isFavorite){
+        card.value.push(item);
+      } else {
+        card.value.splice(
+          card.value.findIndex(item), 1)
+      }
+      
+      console.log(card);
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const fetchCard = async () => {
     try {
       const response = await axios.get(
@@ -115,6 +130,11 @@
     }
   };
 
+  provide('card', {
+    card,
+    addToFavorite
+  })
+  
   onMounted(async () => {
     await fetchCard();
     await fetchFavorite();
