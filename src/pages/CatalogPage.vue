@@ -1,7 +1,9 @@
 <template>
   <MyHeader
     @openFavorite="openFavorite"/>
-  <Favourites/>
+  <Favourites
+    v-if="favoriteOpen"
+    @closeFavorite="closeFavorite"/>
   
   <div class="card__list">
     <!--<MyHeading title="Наши новинки"/>
@@ -20,7 +22,7 @@
 </template>
 
 <script setup>
-  import {onMounted, ref} from "vue"
+  import {onMounted, ref, provide} from "vue"
   
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
@@ -80,6 +82,11 @@
       console.log(error);
     }
   };
+
+  provide('card', {
+    card,
+    addToFavorite
+  })
 
   onMounted(async () => {
     await fetchCard();
