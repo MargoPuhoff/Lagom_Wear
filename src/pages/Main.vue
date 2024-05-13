@@ -46,7 +46,7 @@
     favoriteOpen.value = true
   };
   
-  const fetchFavorite = async () => {
+/*  const fetchFavorite = async () => {
     try {
       
       const {data: favorites} = await axios.get(
@@ -71,7 +71,7 @@
     } catch (error) {
       console.log(error);
     }
-  }; 
+  }; */
 
 /*  const addToFavorite = async (item) => {
     try {
@@ -117,10 +117,10 @@
   const fetchCard = async () => {
     try {
       const response = await axios.get(
-        'https://460e28092cf83f01.mokky.dev/items'
+        'https://460e28092cf83f01.mokky.dev/catalog'
       );
       
-      items.value = response.data.map((obj) => ({
+        items.value = response.data.slice(0, 3).map((obj) => ({
         ...obj,
         isFavorite: false,
         favoriteId: null
@@ -137,7 +137,7 @@
   
   onMounted(async () => {
     await fetchCard();
-    await fetchFavorite();
+    //await fetchFavorite();
   });
   
 </script>
