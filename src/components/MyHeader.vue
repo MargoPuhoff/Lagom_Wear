@@ -29,6 +29,7 @@
     padding: 1.4rem 8rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 1.25rem;
     cursor: pointer;
     color: white;
