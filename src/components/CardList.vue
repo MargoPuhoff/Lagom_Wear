@@ -17,11 +17,9 @@
 
 <script setup>
   import CardItem from "@/components/CardItem.vue"
-  import MyHeading from "@/components/UI/MyHeading.vue"
 
   defineProps({
-    items: Array,
-    favorite: Array
+    items: Array
   })
 
   const emit = defineEmits(['addToFavorite']);

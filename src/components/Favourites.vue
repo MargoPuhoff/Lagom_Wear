@@ -7,15 +7,14 @@
     </div>
     
     <div class="favourite__items">
-      <FavoriteItem
-        v-for="item in card"
+      <CardItem
+        v-for="item in favoriteItems"
         :key="item.id"
         :title="item.title"
         :size="item.size"
         :price="item.price"
         :img-url="item.imgUrl"
-        :is-favorite="item.isFavorite"
-        :onClickFavorite="() => emit('addToFavorite', item)"/>
+        :is-favorite="item.isFavorite"/>
     </div>
     
     <my-button class="favourite__btn">
@@ -27,15 +26,14 @@
 </template>
 
 <script setup>
-  import {onMounted, ref, inject} from "vue"
-  
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
-  import FavoriteItem from "@/components/FavoriteItem.vue"
-  import axios from "axios"
+  import CardItem from "@/components/CardItem.vue"
   
-  const emit = defineEmits(['closeFavorite', 'addToFavorite']);
-  const card = inject('card');
+  const STORAGE_KEY = "favoriteItems"  
+  const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  
+  console.log(favoriteItems)
 </script>
 
 <style scoped>
@@ -51,13 +49,12 @@
   
   .favorites__head{
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 
   .favourite__items{
     padding: 0.5rem;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
   }
 </style>
