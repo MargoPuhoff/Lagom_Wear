@@ -10,8 +10,9 @@
          <li><img src="@/img/icons/contact.svg"></li>
         <li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/in-transit.png"/></li>
         <li><img src="@/img/icons/search.svg"/></li>
-        <li 
-          @click="() => emit('openFavorite')"><img width="50" height="50" src="https://img.icons8.com/bubbles/50/likes-folder.png"/></li>
+        <router-link to="/favorite"><li>
+          <img width="50" height="50" src="https://img.icons8.com/bubbles/50/likes-folder.png"/>
+        </li></router-link>
         
       </ul>
     </div>

@@ -1,17 +1,7 @@
 <template>
-  <MyHeader
-    @openFavorite="openFavorite"/>
-  <Favourites
-    v-if="favoriteOpen"
-    @closeFavorite="closeFavorite"/>
+  <MyHeader/>
   
   <div class="card__list">
-    <!--<MyHeading title="Наши новинки"/>
-    <CardList 
-      :items="items"/>
-    <MyHeading title="Новая колекция "/>
-    <CardList 
-      :items="items"/>-->
     <MyHeading title="Наши хиты"/>
     <CardList 
       :items="items"
@@ -28,33 +18,24 @@
   import MyHeader from "@/components/MyHeader.vue"
   import CardList from "@/components/CardList.vue"
   import MyHeading from "@/components/UI/MyHeading.vue"
-  import Favourites from "@/components/Favourites.vue"
   import axios from "axios"
   
   const items = ref([]); 
   const card = ref([]);
-  const favoriteOpen = ref(false);
+  const STORAGE_KEY = "favoriteItems"  
+  const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   
-  const closeFavorite = () => {
-    favoriteOpen.value = false
-  };
-  const openFavorite = () => {
-    favoriteOpen.value = true
-  };
 
-  /*onMounted(async () => {
-    try {
-      const response = await axios.get('https://460e28092cf83f01.mokky.dev/catalog');
-      items.value = response.data
-    } catch (error) {
-      console.log(error);
-    }
-  }); */
-  const addToFavorite = (item) => {
+  /*const addToFavorite = (item) => {
     try {
       item.isFavorite = !item.isFavorite;
-
-      if (item.isFavorite){
+      
+      if (item.isFavorite) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(item)); 
+      } else {
+        localStorage.removeItem(STORAGE_KEY, JSON.stringify(item)); 
+      }
+      /*if (item.isFavorite){
         card.value.push(item);
       } else {
         card.value.splice(
@@ -64,6 +45,46 @@
     } catch (error) {
       console.log(error)
     }
+  } 
+
+  const loadFavoritesFromLocalStorage = () => {
+    if (localStorage.getItem(STORAGE_KEY)) {
+      const savedItem = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      const itemIndex = items.value.findIndex((item) => item.id === savedItem.id);
+      if (itemIndex !== -1) {
+        items.value[itemIndex].isFavorite = savedItem.isFavorite;
+      }
+    }
+  } */
+
+  const addToFavorite = (item) => {
+    try {
+    
+      const index = favoriteItems.findIndex((favItem) => favItem.id === item.id);
+      item.isFavorite = !item.isFavorite;
+      
+      if (index !== -1) {
+          if (!favoriteItems[index].isFavorite) {
+            favoriteItems.splice(index, 1); 
+          } 
+      } else {
+          favoriteItems.push(item);
+      }
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favoriteItems));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const loadFavoritesFromLocalStorage = () => {
+    favoriteItems.forEach((savedItem) => {
+      const itemIndex = items.value.findIndex((item) => item.id === savedItem.id);
+
+      if (itemIndex !== -1) {
+        items.value[itemIndex].isFavorite = true;
+      }
+    });
   }
   
   const fetchCard = async () => {
@@ -89,6 +110,7 @@
 
   onMounted(async () => {
     await fetchCard();
+    loadFavoritesFromLocalStorage()
   });
 </script>
 

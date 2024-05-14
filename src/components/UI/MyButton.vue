@@ -26,7 +26,9 @@ export default{
   }
 
   .favourite__btn{
+    position:absolute;
+    bottom: 15%;
+    left: 2rem;
     margin-top: 1.25rem;
-    width: 100%;
   }
 </style>
