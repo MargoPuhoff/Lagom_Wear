@@ -60,8 +60,7 @@
         card.value.splice(
           card.value.findIndex(item), 1)
       }
-
-      console.log(card);
+      
     } catch (error) {
       console.log(error)
     }

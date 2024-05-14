@@ -1,9 +1,12 @@
 <template>
   <div class="card__item">
       
-    <div class="card__item-img">
-      <img :src="imgUrl">
-    </div>
+    <router-link
+      :to='linkOpen'>
+      <div class="card__item-img">
+        <img :src="imgUrl">
+      </div>
+    </router-link>
       
     <div class="card__item-info">
       <div class="item-info">
@@ -24,7 +27,9 @@
 </template>
 
 <script setup>
-  defineProps({
+  import {computed} from "vue"
+  
+  const props = defineProps({
     id: Number,
     imgUrl: String,
     title: String,
@@ -33,12 +38,15 @@
     isFavorite: Boolean,
     onClickFavorite: Function
   });
+
+  const linkOpen = computed(() => `/catalog/${props.id}`);
 </script>
 
 <style scoped>
   .card__item{
     padding-bottom: 2rem;
     width: 19rem;
+    cursor: pointer;
   }
 
   .card__item-img img{

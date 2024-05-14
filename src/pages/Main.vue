@@ -15,13 +15,6 @@
     
   </div>
   
-  <div class="card__list">
-    <MyHeading title="Наши новинки"/>
-    <CardList 
-      :items="items"
-      @addToFavorite="addToFavorite"/>
-  </div>
-  
   <MyFooter/>
 </template>
 
