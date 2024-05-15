@@ -1,13 +1,12 @@
 <template>
   <MyHeader/>
   
-  <div>
-    <h1>Товар номер {{ productId }}</h1>
+  <div class="card__item__id">
     
-    <div>
+    <div class="card__item__id-img">
       <img :src="item.imgUrl"/>
     </div>
-    <div>
+    <div class="card__item__id-p">
       <p>{{ item.size }}</p>
       <b>{{ item.title }}</b>
       <p>{{ item.price }}</p>
@@ -51,3 +50,15 @@
     await fetchItem();
   });
 </script>
+
+<style scoped>
+  .card__item__id{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .card__item__id-p{
+    margin-left: 1rem;
+  }
+</style>

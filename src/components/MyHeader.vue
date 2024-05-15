@@ -9,7 +9,7 @@
         <router-link to="/catalog"><li>Одежда</li></router-link>
          <li><img src="@/img/icons/contact.svg"></li>
         <li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/in-transit.png"/></li>
-        <li><img src="@/img/icons/search.svg"/></li>
+        <!--<li><img src="@/img/icons/search.svg"/></li>-->
         <router-link to="/favorite"><li>
           <img width="50" height="50" src="https://img.icons8.com/bubbles/50/likes-folder.png"/>
         </li></router-link>
