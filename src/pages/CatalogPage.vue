@@ -4,6 +4,7 @@
   <div class="card__list">
     <MyHeading title="Наши хиты"/>
     <MyInput class="card__list-search"/>
+    <MySelect class="card__list-select"/>
     <CardList 
       :items="items"
       @addToFavorite="addToFavorite"/>
@@ -20,6 +21,7 @@
   import CardList from "@/components/CardList.vue"
   import MyHeading from "@/components/UI/MyHeading.vue"
   import MyInput from "@/components/UI/MyInput.vue"
+  import MySelect from "@/components/UI/MySelect.vue"
   import axios from "axios"
   
   const items = ref([]); 
@@ -97,5 +99,9 @@
 
   .card__list-search{
     align-self: flex-start;
+  }
+
+  .card__list-select{
+    align-self: flex-end;
   }
 </style>
