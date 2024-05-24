@@ -3,7 +3,7 @@
   
   <div class="card__list">
     <MyHeading title="Наши хиты"/>
-    <MyInput class="card__list-search"/>
+    <MyInput @input="onChangeSearch" class="card__list-search"/>
     <MySelect @change="onChangeSelect" class="card__list-select"/>
     <CardList 
       :items="items"
@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-  import {onMounted, ref, provide, watch} from "vue"
+  import {onMounted, ref, provide, watch, reactive} from "vue"
   
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
@@ -25,8 +25,10 @@
   import axios from "axios"
   
   const items = ref([]); 
-  const sortBy = ref();
-  const searchQuery = ref();
+  const filters = reactive({
+    sortBy: "name",
+    searchQuery: ''
+  });
   
   const STORAGE_KEY = "favoriteItems"  
   const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -61,11 +63,18 @@
     });
   }
   
-  const fetchCard = async () => {
+  const fetchCard = async () => { 
     try {
-      const response = await axios.get(
-        'https://460e28092cf83f01.mokky.dev/catalog'
-      );
+      
+      const params = {
+        sortBy: filters.sortBy,
+      };
+
+      if (filters.searchQuery) {
+        params.title = `*${filters.searchQuery}*`
+      }
+      
+      const response = await axios.get('https://460e28092cf83f01.mokky.dev/catalog', {params})
 
       items.value = response.data.map((obj) => ({
         ...obj,
@@ -82,23 +91,20 @@
     addToFavorite,
     loadFavoritesFromLocalStorage
   })*/
-  const onChangeSelect = event => {
-    sortBy.value = event.target.value; 
+  const onChangeSelect = (event) => {
+    filters.sortBy = event.target.value; 
   };
+
+  const onChangeSearch = (event) => {
+    filters.searchQuery = event.target.value; 
+  }
   
   onMounted(async () => {
     await fetchCard();
     loadFavoritesFromLocalStorage()
   });
 
-  watch(sortBy, async () => {
-    try {
-      const {data} = await axios.get('https://460e28092cf83f01.mokky.dev/catalog?sortBy=' + sortBy.value)
-      items.value = data
-    } catch (error) {
-      console.log(error)
-    }
-  });
+  watch(filters, fetchCard);
 </script>
 
 <style scoped>
