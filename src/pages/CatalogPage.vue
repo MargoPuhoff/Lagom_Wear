@@ -3,6 +3,7 @@
   
   <div class="card__list">
     <MyHeading title="Наши хиты"/>
+    <MyInput class="card__list-search"/>
     <CardList 
       :items="items"
       @addToFavorite="addToFavorite"/>
@@ -18,6 +19,7 @@
   import MyHeader from "@/components/MyHeader.vue"
   import CardList from "@/components/CardList.vue"
   import MyHeading from "@/components/UI/MyHeading.vue"
+  import MyInput from "@/components/UI/MyInput.vue"
   import axios from "axios"
   
   const items = ref([]); 
@@ -91,5 +93,9 @@
     justify-content: center;
     align-items: center;
     background: #807A80;
+  }
+
+  .card__list-search{
+    align-self: flex-start;
   }
 </style>
