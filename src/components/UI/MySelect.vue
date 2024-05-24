@@ -1,17 +1,14 @@
 <template>
   
   <select>
-    <option>
-      Все
+    <option value="name">
+      По названию
     </option>
-    <option>
-      Футболки
+    <option value="price">
+      Сначала дешевле
     </option>
-    <option>
-      Штаны
-    </option>
-    <option>
-      Лонгсливы
+    <option value="-price">
+      Сначала дороже
     </option>
   </select>
   

@@ -4,7 +4,7 @@
   <div class="card__list">
     <MyHeading title="Наши хиты"/>
     <MyInput class="card__list-search"/>
-    <MySelect class="card__list-select"/>
+    <MySelect @change="onChangeSelect" class="card__list-select"/>
     <CardList 
       :items="items"
       @addToFavorite="addToFavorite"/>
@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-  import {onMounted, ref, provide} from "vue"
+  import {onMounted, ref, provide, watch} from "vue"
   
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
@@ -25,6 +25,8 @@
   import axios from "axios"
   
   const items = ref([]); 
+  const sortBy = ref();
+  const searchQuery = ref();
   
   const STORAGE_KEY = "favoriteItems"  
   const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -80,10 +82,22 @@
     addToFavorite,
     loadFavoritesFromLocalStorage
   })*/
-
+  const onChangeSelect = event => {
+    sortBy.value = event.target.value; 
+  };
+  
   onMounted(async () => {
     await fetchCard();
     loadFavoritesFromLocalStorage()
+  });
+
+  watch(sortBy, async () => {
+    try {
+      const {data} = await axios.get('https://460e28092cf83f01.mokky.dev/catalog?sortBy=' + sortBy.value)
+      items.value = data
+    } catch (error) {
+      console.log(error)
+    }
   });
 </script>
 
