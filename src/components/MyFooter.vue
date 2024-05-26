@@ -41,7 +41,7 @@
     align-items: center;
     font-size: 1.25rem;
     color: white;
-    background: #E6CEB6;
+    background: rgba(113, 65, 51, 1);
   }
 
   .footer__icon img{

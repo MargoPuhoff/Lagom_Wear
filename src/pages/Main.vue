@@ -21,9 +21,9 @@
 
 <style scoped>
   .main__banner{
-    height: 80vh;
+    height: 87vh;
     position: relative;
-    background: url(@/img/jpg/banner.jpg) 100% 100% no-repeat;
+    background:#F8DAD1;
   }
 
   .main__banner-p{
@@ -36,10 +36,12 @@
 
   .main__banner-p h2{
     font-size: 3.125rem;
+    color:black;
   }
 
   .main__banner-p p{
     font-size: 2.18rem;
+    color:black;
   }
 
   .card__list{

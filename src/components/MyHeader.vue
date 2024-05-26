@@ -33,7 +33,7 @@
     font-size: 1.25rem;
     cursor: pointer;
     color: white;
-    background: #E6CEB6;
+    background: rgba(113, 65, 51, 1);
   }
   
   ul{
