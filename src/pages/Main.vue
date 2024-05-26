@@ -10,13 +10,14 @@
     </div>
     
   </div>
-  
+  <MyForm/>
   <MyFooter/>
 </template>
 
 <script setup>
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
+  import MyForm from "@/components/UI/MyForm.vue"
 </script>
 
 <style scoped>

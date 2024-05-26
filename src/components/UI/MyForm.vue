@@ -1,0 +1,75 @@
+<template>
+  <div class="form">
+    <form>
+      <p>Форма связи</p>
+
+      <input
+        placeholder="Имя">
+      <input
+        type="phone"
+        placeholder="Номер телефона">
+      <textarea rows="8">
+        Напишите какой товар понравился
+      </textarea>
+      <my-button class="form__btn">отправить форму</my-button>
+    </form>
+  </div>
+</template>
+
+<script setup>
+  import MyButton from "@/components/UI/MyButton.vue"
+  
+</script>
+
+<style scoped>
+  .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(@/img/jpg/form__back.jpg) no-repeat;
+    background-position-y: 47%;
+    background-size: 100%;
+  }
+
+  form{
+    margin: 10.18rem;
+    width: 30%;
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 38px;
+    border: 1px solid black;
+    background: #BABABA;
+  }
+
+  p, input::placeholder{
+    text-transform: uppercase;
+  }
+
+  p{
+    padding-top: 2.6rem;
+  }
+
+  input{
+    margin: 1.5rem;
+    padding-bottom: 1rem;
+    width: 80%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+  }
+  
+ input::placeholder{
+   color: black;
+ }
+
+  textarea{
+    width: 80%;
+    text-transform: uppercase;
+    outline: none;
+    background: transparent;
+    border: 1px solid black;
+  }
+</style>
