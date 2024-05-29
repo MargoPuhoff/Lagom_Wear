@@ -4,14 +4,19 @@
       <p>Форма связи</p>
 
       <input
-        placeholder="Имя">
+        placeholder="Имя"
+        id="name">
       <input
         type="phone"
-        placeholder="Номер телефона">
-      <textarea rows="8">
+        placeholder="Номер телефона"
+        id="phone">
+      <textarea 
+        rows="8"
+        id="text">
         Напишите какой товар понравился
       </textarea>
-      <my-button class="form__btn">отправить форму</my-button>
+      <my-button class="form__btn"
+        id="btn_submit">отправить форму</my-button>
     </form>
   </div>
 </template>
