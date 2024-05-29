@@ -109,7 +109,7 @@
 
 <style scoped>
   .card__list{
-    padding: 8rem;
+    padding: rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

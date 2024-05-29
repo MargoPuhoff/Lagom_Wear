@@ -9,11 +9,12 @@
     <div class="footer__menu">
       <ul>
         
-        <li>Главная</li>
-        <li>Одежда</li>
-        <li>Доставка</li>
-        <li>О нас</li>
-        <li>Контакты</li>
+        <router-link to="/"><li>Главная</li></router-link>
+        <router-link to="/catalog"><li>каталог</li></router-link>
+        <router-link to="/delivery"><li>доставка</li></router-link>
+        <router-link to="/about_us"><li>О нас</li></router-link>
+        <router-link to="/contact"><li>контакты</li></router-link>
+        <router-link to="/favorite"><li>Избранное</li></router-link>
         
       </ul>      
     </div>
@@ -35,13 +36,13 @@
 
 <style scoped>
   .footer{
-    padding: 1.4rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: white;
-    background: rgba(113, 65, 51, 1);
+    background: rgba(113, 65, 51, 1);  
   }
 
   .footer__icon img{
@@ -52,19 +53,26 @@
   }
 
   ul, .footer__info{
-    padding-top: 4.6rem;
+    padding-top: 3rem;
     display: flex;
     justify-content: space-around;
+    text-decoration: none;
+  }
+
+  .footer__menu a{
+    text-decoration: none;
   }
 
   li{
-    padding-left: 3.125rem;
+    padding-left: 6rem;
     list-style: none;
-    cursor: pointer;
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
   }
 
   .footer__info p{
-    padding-left: 5rem;
-    font-size: .875rem;
+    padding-left: 10rem;
+    font-size: 0.8rem;
   }
 </style>

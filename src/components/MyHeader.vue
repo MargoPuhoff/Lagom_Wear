@@ -1,29 +1,31 @@
 <template>
   <div class="header">
-    <div v-if="!open">Логотип</div>
-    
+    <router-link to="/"><div v-if="!open">LaGom Wear</div></router-link>
+    <!--добавила раздел, изменила картинку-->
     <div>
       <ul class="menu__desktop">
         
         <router-link to="/"><li>Главная</li></router-link>
-        <router-link to="/catalog"><li>Одежда</li></router-link>
-        <router-link to="/contact"><li><img src="@/img/icons/contact.svg"></li></router-link>
-        <router-link to="/delivery"><li><img width="50" height="50" src="https://img.icons8.com/bubbles/50/in-transit.png"/></li></router-link>
+        <router-link to="/catalog"><li>каталог</li></router-link>
+        <router-link to="/delivery"><li>доставка</li></router-link>
+        <router-link to="/about_us"><li>О нас</li></router-link>
+        <router-link to="/contact"><li>контакты</li></router-link>
         <router-link to="/favorite"><li>
-          <img width="50" height="50" src="https://img.icons8.com/bubbles/50/likes-folder.png"/>
+          <img width="28" height="28" src="@/img/icons/icons_heart.png"/>
         </li></router-link>
         
       </ul>
-      
+      <!--добавила раздел-->
       <div class="menu__mobile">
         <a href="#" 
           class="header__menu"
           @click="openMenu">Меню</a>
         <ul v-if="open">
           <router-link to="/"><li>Главная</li></router-link>
-          <router-link to="/catalog"><li>Одежда</li></router-link>
-          <router-link to="/contact"><li>Контакты</li></router-link>
+          <router-link to="/catalog"><li>каталог</li></router-link>
           <router-link to="/delivery"><li>Доставка</li></router-link>
+          <router-link to="/about_us"><li>О нас</li></router-link>
+          <router-link to="/contact"><li>Контакты</li></router-link>
           <router-link to="/favorite"><li>Избранное</li></router-link>
         </ul>
       </div>
@@ -44,14 +46,16 @@
 </script>
 
 <style scoped>
-
+  /* добавила своиства, изменила размеры*/
   .header{
-    padding: 1.4rem 8rem;
+    padding: 0.7em 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.25rem;
-    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 300;
     color: white;
     background: rgba(113, 65, 51, 1);
   }
@@ -74,7 +78,7 @@
    }
   
   li{
-    padding-left: 1.8rem;
+    padding-left: 1rem;
     list-style: none;
     color: white;
   }
@@ -89,8 +93,8 @@
   }
   
 /* Адаптив для меню */
-  
-  @media screen and (max-width: 750px) {
+  /*изменила размер адаптива, по меню*/
+  @media screen and (max-width: 935px) {
     
     .menu__desktop{
       display: none;

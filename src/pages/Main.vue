@@ -22,7 +22,7 @@
 
 <style scoped>
   .main__banner{
-    height: 87vh;
+    height: 88.5vh;
     position: relative;
     background:#F8DAD1;
   }
