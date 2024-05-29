@@ -50,7 +50,7 @@
           if (favoriteItems[index].isFavorite) {
             favoriteItems.splice(index, 1); 
           } else {
-             favoriteItems[index] = item; // обновляем элемент в массиве (1:05)
+             favoriteItems[index] = item; // обновляем элемент в массиве (1:05:04)
           }  
       } else {
         favoriteItems.push(item);
