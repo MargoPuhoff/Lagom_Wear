@@ -7,6 +7,7 @@
     </div>
     
     <div class="favourite__items">
+      <!-- Рендер избранные товары из массива -->
       <CardItem
         v-for="item in favoriteItems"
         :key="item.id"
@@ -32,8 +33,6 @@
   
   const STORAGE_KEY = "favoriteItems"  
   const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  
-  console.log(favoriteItems)
 </script>
 
 <style scoped>
@@ -51,7 +50,7 @@
     display: flex;
     align-items: center;
   }
-
+/* Div, в котором избранные */
   .favourite__items{
     padding: 0.5rem;
     display: flex;

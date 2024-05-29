@@ -18,7 +18,8 @@
   
 </script>
 
-<style scoped>
+<style scoped> 
+  /* Select на странице каталог */
   .card__list-select{
     width: 10%;
     outline: none;

@@ -3,8 +3,10 @@
   
   <div class="card__list">
     <MyHeading title="Наши хиты"/>
+    
     <MyInput @input="onChangeSearch" class="card__list-search"/>
     <MySelect @change="onChangeSelect" class="card__list-select"/>
+    <!-- Здесь выводятся все наши карточки -->
     <CardList 
       :items="items"
       @addToFavorite="addToFavorite"/>
@@ -14,6 +16,7 @@
 </template>
 
 <script setup>
+  // импорт методов самого Vue.js
   import {onMounted, ref, provide, watch, reactive} from "vue"
   
   import MyFooter from "@/components/MyFooter.vue"
@@ -25,14 +28,17 @@
   import axios from "axios"
   
   const items = ref([]); 
+  // Переменная для хранения выбранного значения из select, а также текста в input
   const filters = reactive({
     sortBy: "name",
     searchQuery: ''
   });
   
   const STORAGE_KEY = "favoriteItems"  
+  // Массив с избранными товарами
   const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  
+
+  // Функция, в которой добавляем товар в избранное
   const addToFavorite = (item) => {
     try {
     
@@ -52,7 +58,7 @@
       console.log(error);
     }
   }
-
+  // Выгружает товары из LS
   const loadFavoritesFromLocalStorage = () => {
     favoriteItems.forEach((savedItem) => {
       const itemIndex = items.value.findIndex((item) => item.id === savedItem.id);
@@ -62,7 +68,7 @@
       }
     });
   }
-  
+  // Рендерит карточки через запрос
   const fetchCard = async () => { 
     try {
       
@@ -91,6 +97,7 @@
     addToFavorite,
     loadFavoritesFromLocalStorage
   })*/
+  // Функционал поиска и сортировки
   const onChangeSelect = (event) => {
     filters.sortBy = event.target.value; 
   };
@@ -108,8 +115,9 @@
 </script>
 
 <style scoped>
+  /* Div в котором товары, поиск, сортировка и загаловок*/
   .card__list{
-    padding: rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

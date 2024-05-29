@@ -1,6 +1,7 @@
 <template>
 
     <div class="card__list-item">
+      <!--Рендер всех карточек с сервера -->
       <CardItem
         v-for="item in items"
         :key="item.id"
@@ -26,7 +27,7 @@
 </script>
 
 <style scoped>
-  
+  /* Div, в котором все карточки */
   .card__list{
     padding: 8rem;
     display: flex;
@@ -36,6 +37,7 @@
     background: #807A80;
   }
   
+  /* Карточка с товаром */
   .card__list-item{
     padding-top: 7.6rem;
     padding-bottom: 7.6rem;

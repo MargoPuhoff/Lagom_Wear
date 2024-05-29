@@ -1,6 +1,8 @@
 <template>
   <MyHeader/>
+  
   <div>Это страница доставки</div>
+  
   <MyFooter/>
 </template>
 

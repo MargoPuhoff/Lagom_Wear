@@ -6,10 +6,7 @@
   </button>
 </template>
 
-<script>
-export default{
-  name: "my-button"    
-}
+<script setup>
 </script>
 
 <style scoped>

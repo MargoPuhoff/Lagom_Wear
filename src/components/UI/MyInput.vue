@@ -8,6 +8,7 @@
 </script>
 
 <style scoped>
+  /* Input на странице каталог */
   .card__list-search{
     padding-bottom: 0.3rem;
     width: 20%;

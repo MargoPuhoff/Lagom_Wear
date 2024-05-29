@@ -1,21 +1,23 @@
 <template>
   <div class="form">
-    <form >
+    <!-- поменяла место обработки формы на рнр файл,-->
+    <form action="feedback_form.php" method="post" class="postcard" name="frm_feedback" >
       <p>Форма связи</p>
-      <input placeholder="Имя" id="name">
-      <input type="phone" placeholder="Номер телефона" id="phone">
-      <textarea rows="8" id="text">
-        Напишите какой товар понравился
-      </textarea>
-      <my-button class="form__btn"
-        id="btn_submit">отправить форму</my-button>
+      <input type="text" placeholder="Ваше имя" id="name" required>
+      <input type="phone" placeholder="Номер телефона" id="phone" required>
+      <textarea rows="8" id="text">Напишите какой товар понравился</textarea>
+      <p>как с вами можно связаться</p>
+      <input type="radio" name="connection" value="Позвонить">
+      <input type="radio" name="connection" value="написать в телеграмм">
+      <my-button class="form__btn">
+        <input type="submit" value="Отправить форму" name="btn_submit">
+      </my-button> <!--добавь стиль кнопки-->
     </form>
   </div>
 </template>
 
 <script setup>
   import MyButton from "@/components/UI/MyButton.vue"
-  
 </script>
 
 <style scoped>

@@ -43,6 +43,7 @@
 </script>
 
 <style scoped>
+  /* Карточка с товаром, которая будет на странице в каталоге */
   .card__item{
     padding-bottom: 2rem;
     width: 19rem;

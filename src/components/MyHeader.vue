@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link to="/"><div v-if="!open">LaGom Wear</div></router-link>
-    <!--добавила раздел, изменила картинку-->
+    <!--добавила раздел, изменила картинку (тока это в коммит надо писать)-->
     <div>
       <ul class="menu__desktop">
         
@@ -46,7 +46,7 @@
 </script>
 
 <style scoped>
-  /* добавила своиства, изменила размеры*/
+  /* добавила своиства, изменила размеры (это тоже лучше в коммит писать)*/
   .header{
     padding: 0.7em 10%;
     display: flex;

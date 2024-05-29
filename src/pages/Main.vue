@@ -2,6 +2,7 @@
   <MyHeader/>
   <div class="main">
     
+    <!-- Здесь баннер -->
     <div class="main__banner">
       <div class="main__banner-p">
         <h2>Lagom Wear | Оверсайз одежда</h2>
@@ -10,11 +11,14 @@
     </div>
     
   </div>
+  
+  <!-- Подключение компонентов -->
   <MyForm/>
   <MyFooter/>
 </template>
 
 <script setup>
+  // импортирую те самые компоненты, чтобы их можно было легко использовать
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
   import MyForm from "@/components/UI/MyForm.vue"

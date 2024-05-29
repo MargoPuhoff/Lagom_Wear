@@ -1,6 +1,6 @@
 <template>
   <MyHeader/>
-  
+  <!-- Здесь карточка товара (смотрит по id)-->
   <div class="card__item__id">
     
     <div class="card__item__id-img">
@@ -34,7 +34,7 @@
   };
 
   updateProductId();
-
+  // Получение товара по id
   const fetchItem = async () => {
     try {
       const response = await axios.get(`https://460e28092cf83f01.mokky.dev/catalog/${productId.value}`);
@@ -52,6 +52,7 @@
 </script>
 
 <style scoped>
+  /* Div, в котором картинка и информация по карточке  */
   .card__item__id{
     padding: 1rem;
     display: flex;
