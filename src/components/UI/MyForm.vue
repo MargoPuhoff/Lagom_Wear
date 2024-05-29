@@ -1,18 +1,10 @@
 <template>
   <div class="form">
-    <form>
+    <form >
       <p>Форма связи</p>
-
-      <input
-        placeholder="Имя"
-        id="name">
-      <input
-        type="phone"
-        placeholder="Номер телефона"
-        id="phone">
-      <textarea 
-        rows="8"
-        id="text">
+      <input placeholder="Имя" id="name">
+      <input type="phone" placeholder="Номер телефона" id="phone">
+      <textarea rows="8" id="text">
         Напишите какой товар понравился
       </textarea>
       <my-button class="form__btn"

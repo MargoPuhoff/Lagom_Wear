@@ -58,6 +58,14 @@
     align-items: center;
   }
 
+  .card__item__id-img{
+    width: 25%;
+  }
+
+  .card__item__id-img img{
+    width: 100%;
+  }
+
   .card__item__id-p{
     margin-left: 1rem;
   }
