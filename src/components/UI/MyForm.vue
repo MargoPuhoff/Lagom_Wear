@@ -3,15 +3,19 @@
     <!-- поменяла место обработки формы на рнр файл,-->
     <form action="feedback_form.php" method="post" class="postcard" name="frm_feedback" >
       <p>Форма связи</p>
-      <input type="text" placeholder="Ваше имя" id="name" required>
-      <input type="phone" placeholder="Номер телефона" id="phone" required>
-      <textarea rows="8" id="text">Напишите какой товар понравился</textarea>
+      <input type="text" placeholder="Ваше имя" name="name" id="name" required>
+      <input type="tel" placeholder="Номер телефона" name="phone" id="phone">
+      <textarea rows="8" name="text" id="text">Напишите какой товар понравился</textarea>
       <p>как с вами можно связаться</p>
-      <input type="radio" name="connection" value="Позвонить">
-      <input type="radio" name="connection" value="написать в телеграмм">
+      <label for="call">Позвонить</label><input type="radio" name="connection" id="call" value="Позвонить">
+      <label for="msg">Написать</label><input type="radio" name="connection" id="msg" value="написать в телеграмм">
+      
+      <!--поиграть со стилями, проверить работу в рнр, в рнр добавлена переменная с именем connection, работоспособность формы - не известно -->
+      <!-- Закинь ошибку в gpt или какую другую нейронку-->
+
       <my-button class="form__btn">
         <input type="submit" value="Отправить форму" name="btn_submit">
-      </my-button> <!--добавь стиль кнопки-->
+      </my-button> 
     </form>
   </div>
 </template>

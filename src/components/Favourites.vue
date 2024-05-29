@@ -30,6 +30,8 @@
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
   import CardItem from "@/components/CardItem.vue"
+  import MyButton from "@/components/UI/MyButton.vue"
+  
   
   const STORAGE_KEY = "favoriteItems"  
   const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];

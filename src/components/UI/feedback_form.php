@@ -7,13 +7,15 @@
     if($_POST['name'] == "") $errors[] = "Поле 'Имя' не заполнено!";
     if($_POST['phone'] == "") $errors[] = "Поле 'Номер телефона' не заполнено!";
     if($_POST['text'] == "") $errors[] = "Поле 'Описание товара' не заполнено!";
+    if($_POST['connection'] == "") $errors[] = "Поле 'Вид связи' не заполнено!";
     
     // если форма без ошибок
     if(empty($errors)) {
      // собираем данные из формы
       $message = "Имя: " . $_POST['name'] . "<br/>";
       $message .= "Номер телефона: " . $_POST['phone'] . "<br/>";
-      $message .= "Текст: " . $_POST['text'];
+      $message .= "Текст: " . $_POST['text']. "<br/>";
+      $message .= "Вид связи: " . $_POST['connection'];
       
       send_mail($message); // отправим письмо
       // выведем сообщение об успехе

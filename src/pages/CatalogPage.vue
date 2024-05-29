@@ -17,7 +17,7 @@
 
 <script setup>
   // импорт методов самого Vue.js
-  import {onMounted, ref, provide, watch, reactive} from "vue"
+  import {onMounted, ref, provide, watch, reactive, toRefs} from "vue"
   
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
@@ -36,7 +36,8 @@
   
   const STORAGE_KEY = "favoriteItems"  
   // Массив с избранными товарами
-  const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+  const favoriteItems = reactive(JSON.parse(localStorage.getItem(STORAGE_KEY)) || []);
 
   // Функция, в которой добавляем товар в избранное
   const addToFavorite = (item) => {
@@ -46,11 +47,13 @@
       item.isFavorite = !item.isFavorite;
       
       if (index !== -1) {
-          if (!favoriteItems[index].isFavorite) {
+          if (favoriteItems[index].isFavorite) {
             favoriteItems.splice(index, 1); 
-          } 
+          } else {
+             favoriteItems[index] = item; // обновляем элемент в массиве (1:05)
+          }  
       } else {
-          favoriteItems.push(item);
+        favoriteItems.push(item);
       }
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify(favoriteItems));
@@ -58,6 +61,7 @@
       console.log(error);
     }
   }
+  
   // Выгружает товары из LS
   const loadFavoritesFromLocalStorage = () => {
     favoriteItems.forEach((savedItem) => {
