@@ -34,33 +34,39 @@
     searchQuery: ''
   });
   
-  const STORAGE_KEY = "favoriteItems"  
-  // Массив с избранными товарами
+  const STORAGE_KEY = 'favoriteItems';
 
+  // Инициализация массива избранных товаров из localStorage
   const favoriteItems = reactive(JSON.parse(localStorage.getItem(STORAGE_KEY)) || []);
 
-  // Функция, в которой добавляем товар в избранное
+  // Функция для добавления/удаления товара в избранное
   const addToFavorite = (item) => {
-    try {
-    
-      const index = favoriteItems.findIndex((favItem) => favItem.id === item.id);
-      item.isFavorite = !item.isFavorite;
-      
-      if (index !== -1) {
-          if (favoriteItems[index].isFavorite) {
-            favoriteItems.splice(index, 1); 
-          } else {
-             favoriteItems[index] = item; // обновляем элемент в массиве (1:05:04)
-          }  
-      } else {
-        favoriteItems.push(item);
-      }
+    const index = favoriteItems.findIndex((favItem) => favItem.id === item.id);
+    item.isFavorite = !item.isFavorite;
 
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(favoriteItems));
-    } catch (error) {
-      console.log(error);
+    if (index !== -1) {
+      if (!item.isFavorite) {
+        favoriteItems.splice(index, 1); // Удаление из избранного
+      } else {
+        favoriteItems[index] = item; // Обновление элемента в массиве
+      }
+    } else {
+      favoriteItems.push(item); // Добавление в избранное
     }
-  }
+  };
+
+  // Отслеживание изменений в массиве избранных товаров и обновление localStorage
+  watch(favoriteItems, (newFavoriteItems) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newFavoriteItems));
+  }, { deep: true });
+
+  // При монтировании компонента обновляем состояние isFavorite у товаров
+  const updateFavoriteStatus = (items) => {
+    items.forEach((item) => {
+      const isFavorite = favoriteItems.some((favItem) => favItem.id === item.id);
+      item.isFavorite = isFavorite;
+    });
+  };
   
   // Выгружает товары из LS
   const loadFavoritesFromLocalStorage = () => {
@@ -114,7 +120,7 @@
     await fetchCard();
     loadFavoritesFromLocalStorage()
   });
-
+  
   watch(filters, fetchCard);
 </script>
 
