@@ -44,25 +44,29 @@
 
 <style scoped>
   /* Карточка с товаром, которая будет на странице в каталоге */
+  /*поменяла на проценты,изменика размер карт,изменила растояния*/
+  
   .card__item{
-    padding-bottom: 2rem;
+    padding-bottom: 5%;
     width: 19rem;
     cursor: pointer;
   }
-
+/*смотри нужно сделать описание товара согласно, дизайну(если не пойдет скажи) и еще чтобы с этого текста тоже перекидывало на карточку товара*/
   .card__item-img img{
     width: 100%;
+    height:100%;
+    min-height: 570px;
   }
 
   .card__item-info{
-    padding-top: 1.5rem;
+    padding-top: 5%;
     display: flex;
     justify-content: space-between;
-    line-height: 20px;
+    line-height: 25px;
   }
 
   .item-icon{
-    cursor: pointer;
-  }
+    padding-right:1%;
+    }
 
 </style>

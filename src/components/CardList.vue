@@ -29,7 +29,6 @@
 <style scoped>
   /* Div, в котором все карточки */
   .card__list{
-    padding: 8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,8 +38,8 @@
   
   /* Карточка с товаром */
   .card__list-item{
-    padding-top: 7.6rem;
-    padding-bottom: 7.6rem;
+    padding-top: 2%;
+    padding-bottom: 2%;
     width: 70%;
     display: flex;
     justify-content: space-between;

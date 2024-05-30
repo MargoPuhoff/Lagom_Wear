@@ -108,6 +108,7 @@
     loadFavoritesFromLocalStorage
   })*/
   // Функционал поиска и сортировки
+  /*нужно при адаптиве настроить чтобы они были в столбец, с лева*/
   const onChangeSelect = (event) => {
     filters.sortBy = event.target.value; 
   };
@@ -126,20 +127,21 @@
 
 <style scoped>
   /* Div в котором товары, поиск, сортировка и загаловок*/
+  /*так. тут вопрос по логике но не сильный мем с падингом не пон типо нафиг он на все , не уверена что это совсем коректно, по хорошему его тупо к названию раздела, вот подумай*/
   .card__list{
-    padding: 2rem;
+    padding: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #807A80;
+    background: #F8DAD1;
   }
-
+/* изменила позицию*/
   .card__list-search{
-    align-self: flex-start;
+    margin-right:50%;
   }
 
   .card__list-select{
-    align-self: flex-end;
+    margin-left:60%;
   }
 </style>
