@@ -35,4 +35,12 @@
     text-transform: uppercase;
     border: 1px solid black;
   }
+
+  .main__banner-btn{
+    padding: .6rem 2.125rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    border: 4px solid #714133;
+    background: white;
+  }
 </style>
