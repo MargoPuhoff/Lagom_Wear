@@ -2,14 +2,17 @@
   <MyHeader/>
   
   <div class="card__list">
-    <MyHeading title="Оверсайз одежда"/>
     
-    <MyInput @input="onChangeSearch" class="card__list-search"/>
-    <MySelect @change="onChangeSelect" class="card__list-select"/>
+    <MyHeading title="Оверсайз одежда"/>
+    <div class="card__func">
+      <MyInput @input="onChangeSearch" class="card__list-search"/>
+      <MySelect @change="onChangeSelect" class="card__list-select"/>
+    </div>
     <!-- Здесь выводятся все наши карточки -->
     <CardList 
       :items="items"
       @addToFavorite="addToFavorite"/>
+    
   </div>
   <MyForm/>
   <MyFooter/>
@@ -130,21 +133,20 @@
 
 <style scoped>
   /* Div в котором товары, поиск, сортировка и загаловок*/
-  /*так. тут вопрос по логике но не сильный мем с падингом не пон типо нафиг он на все , не уверена что это совсем коректно, по хорошему его тупо к названию раздела, вот подумай*/
+
   .card__list{
     padding: 2%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: white;
   }
-/* изменила позицию*/
-  .card__list-search{
-    margin-right: 50%;
-  }
 
-  .card__list-select{
-    margin-left: 60%;
-  }
+ .card__func{
+   width: 70%;
+   display: flex;
+   justify-content: space-between;
+ }
 </style>

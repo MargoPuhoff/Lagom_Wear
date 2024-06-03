@@ -60,7 +60,7 @@
   }
 
   .card__item__id-img{
-    width: 25%;
+    width: 40%;
   }
 
   .card__item__id-img img{

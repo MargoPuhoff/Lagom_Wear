@@ -9,6 +9,8 @@
         :title="item.title"
         :size="item.size"
         :price="item.price"
+        :discount="item.discount"
+        :old_price="item.old_price"
         :imgUrl="item.imgUrl"
         :isFavorite="item.isFavorite"
         :onClickFavorite="() => emit('addToFavorite', item)"/>
@@ -27,23 +29,14 @@
 </script>
 
 <style scoped>
-  /* Div, в котором все карточки */
-  .card__list{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #807A80;
-  }
   
-  /* Карточка с товаром */
+  /* Карточки с товаром */
   .card__list-item{
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: 1.75rem 0;
     width: 70%;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   
 </style>

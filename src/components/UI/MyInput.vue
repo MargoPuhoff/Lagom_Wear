@@ -11,7 +11,7 @@
   /* Input на странице каталог */
   .card__list-search{
     padding: 0.25rem 2rem;
-    width: 20%;
+    width: 30%;
     font-size: 1.25rem;
     color: black;
     outline: none;
