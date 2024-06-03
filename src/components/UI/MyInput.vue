@@ -1,6 +1,6 @@
 <template>
   <input
-    placeholder="Поиск">
+    placeholder="Что хотите найти?">
 </template>
 
 <script setup>
@@ -10,16 +10,19 @@
 <style scoped>
   /* Input на странице каталог */
   .card__list-search{
-    padding-bottom: 0.3rem;
+    padding: 0.25rem 2rem;
     width: 20%;
-    color: white;
-    background: transparent;
+    font-size: 1.25rem;
+    color: black;
     outline: none;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
+    background: url(@/img/svg/search__catalog.svg) no-repeat;
+    background-size: 8%;
   }
 
   .card__list-search::placeholder{
-    color: white;
+    font-size: 1.25rem;
+    color: #7B7B7B;
   }
 </style>

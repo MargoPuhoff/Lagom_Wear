@@ -27,7 +27,9 @@
       <div class="main__banner-bottom-btn">
         <p>Хочешь приятную и качественную вещь</p>
         <p>мы подскажем где ее 
-          <my-button class="main__banner-btn">заказать</my-button>
+          <my-button class="main__banner-btn"> 
+            <router-link to="/catalog">заказать</router-link>
+          </my-button>
         </p>
       </div>
     </div>
@@ -43,7 +45,6 @@
   // импортирую те самые компоненты, чтобы их можно было легко использовать
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
-  import MyForm from "@/components/UI/MyForm.vue"
   import MyHeading from "@/components/UI/MyHeading.vue"
   import MyButton from "@/components/UI/MyButton.vue"
   
@@ -111,5 +112,10 @@
     border: 11px solid black;
     border-radius: 85px;
     background: #CDD0D7CC;
+  }
+
+  .main__banner-bottom-btn a{
+    color: black;
+    text-decoration: none;
   }
 </style>

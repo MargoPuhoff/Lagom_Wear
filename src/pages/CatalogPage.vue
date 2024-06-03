@@ -2,7 +2,7 @@
   <MyHeader/>
   
   <div class="card__list">
-    <MyHeading title="Наши хиты"/>
+    <MyHeading title="Оверсайз одежда"/>
     
     <MyInput @input="onChangeSearch" class="card__list-search"/>
     <MySelect @change="onChangeSelect" class="card__list-select"/>
@@ -11,7 +11,7 @@
       :items="items"
       @addToFavorite="addToFavorite"/>
   </div>
-  
+  <MyForm/>
   <MyFooter/>
 </template>
 
@@ -25,6 +25,8 @@
   import MyHeading from "@/components/UI/MyHeading.vue"
   import MyInput from "@/components/UI/MyInput.vue"
   import MySelect from "@/components/UI/MySelect.vue"
+  import MyForm from "@/components/UI/MyForm.vue"
+  
   import axios from "axios"
   
   const items = ref([]); 
@@ -107,6 +109,7 @@
     addToFavorite,
     loadFavoritesFromLocalStorage
   })*/
+  
   // Функционал поиска и сортировки
   /*нужно при адаптиве настроить чтобы они были в столбец, с лева*/
   const onChangeSelect = (event) => {
@@ -134,14 +137,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #F8DAD1;
+    background: white;
   }
 /* изменила позицию*/
   .card__list-search{
-    margin-right:50%;
+    margin-right: 50%;
   }
 
   .card__list-select{
-    margin-left:60%;
+    margin-left: 60%;
   }
 </style>
