@@ -1,11 +1,8 @@
 <template>
   <MyHeader/>
   <div class="favorites">
-    
-    <div class="favorites__head">
-      <h2>Ваши сохраненки</h2>
-    </div>
-    
+
+    <MyHeading title="Избраное" class="favorite__title"/>
     <div class="favourite__items">
       <!-- Рендер избранные товары из массива -->
       <CardItem
@@ -19,7 +16,7 @@
     </div>
     
     <my-button class="favourite__btn">
-      Перейти к боту
+      <a href="https://t.me/lagom_wear">Перейти в Telegram</a>
     </my-button>
     
   </div>
@@ -31,7 +28,7 @@
   import MyHeader from "@/components/MyHeader.vue"
   import CardItem from "@/components/CardItem.vue"
   import MyButton from "@/components/UI/MyButton.vue"
-  
+  import MyHeading from "@/components/UI/MyHeading.vue"
   
   const STORAGE_KEY = "favoriteItems"  
   const favoriteItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -44,7 +41,6 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    color: #66433F;
     background: white;
   }
   
@@ -57,5 +53,10 @@
     padding: 0.5rem;
     display: flex;
     justify-content: space-around;
+  }
+
+  .favourite__btn a{
+    color: #66433F;
+    text-decoration: none;  
   }
 </style>

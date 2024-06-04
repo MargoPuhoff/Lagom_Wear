@@ -2,7 +2,7 @@
   <div class="footer">
     
     <div class="footer__icon">
-      <img src="@/img/svg/tg.svg">
+      <a href="https://t.me/lagom_wear"><img src="@/img/svg/tg.svg"></a>
       <img src="@/img/svg/vk.svg">
     </div>
     

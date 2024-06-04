@@ -10,6 +10,7 @@
 </script>
 
 <style scoped>
+  
   .btn{
     font-size: 1.25rem;
     cursor: pointer;
@@ -17,13 +18,11 @@
   }
 
   .favourite__btn{
-    margin-top: 1.25rem;
+    margin: auto;
     padding: 1.25rem;
-    position:absolute;
-    bottom: 15%;
-    left: 2rem;
+    width: 15%;
     font-weight: 500;
-    color: #66433F;
+    
     border: none;
     border-radius: 15px;
     box-shadow: 0 0 5px #66433F;

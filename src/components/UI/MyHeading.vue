@@ -14,6 +14,7 @@
     font-size: 3.125rem;
   }
 
-  .main__adout-head{
-  }
+ .favorite__title{
+   margin: auto;
+ }
 </style>
