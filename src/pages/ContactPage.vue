@@ -1,6 +1,6 @@
 <template>
   <MyHeader/>
-  <div>Это страница контактов</div>
+  
   <MyFooter/>
 </template>
 
@@ -10,5 +10,5 @@
 </script>
 
 <style scoped>
-
+  
 </style>
