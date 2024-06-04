@@ -5,10 +5,7 @@
     <!-- Здесь баннер -->
     <div class="main__banner">
     </div>
-    <!--<div class="main__banner-p">
-      <h2>Lagom Wear | Оверсайз одежда</h2>
-      <p>Базовая женская оверсайз одежда из<br>премиального хлопка</p>
-    </div>-->
+  
     <div class="main__about">
       <div class="main__about-text">
         <MyHeading 
@@ -25,6 +22,7 @@
 
     <div class="main__banner-bottom">
       <div class="main__banner-bottom-btn">
+        <img src="/src/img/png/main__btn.png">
         <p>Хочешь приятную и качественную вещь</p>
         <p>мы подскажем где ее 
           <my-button class="main__banner-btn"> 
@@ -95,6 +93,7 @@
 
   .main__banner-bottom{
     height: 90vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,6 +111,12 @@
     border: 11px solid black;
     border-radius: 85px;
     background: #CDD0D7CC;
+  }
+
+  .main__banner-bottom-btn img{
+    position: absolute;
+    bottom: -7%;
+    left: 0;
   }
 
   .main__banner-bottom-btn a{

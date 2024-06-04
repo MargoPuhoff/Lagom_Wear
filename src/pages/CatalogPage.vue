@@ -14,7 +14,7 @@
       @addToFavorite="addToFavorite"/>
     
   </div>
-  <MyForm/>
+
   <MyFooter/>
 </template>
 
@@ -28,7 +28,6 @@
   import MyHeading from "@/components/UI/MyHeading.vue"
   import MyInput from "@/components/UI/MyInput.vue"
   import MySelect from "@/components/UI/MySelect.vue"
-  import MyForm from "@/components/UI/MyForm.vue"
   
   import axios from "axios"
   
