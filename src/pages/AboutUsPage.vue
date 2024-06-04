@@ -47,8 +47,6 @@
   .about__info{
     margin: 10rem auto;
     width: 80%;
-    display: flex;
-    flex-direction: column;
   }
   
 </style>
