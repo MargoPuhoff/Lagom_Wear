@@ -37,9 +37,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Didact Gothic;
     font-size: 9.3rem;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
+    font-style: normal;
     color: #252020;
     background: url(@/img/png/about__banner.png) 100% no-repeat;
   }

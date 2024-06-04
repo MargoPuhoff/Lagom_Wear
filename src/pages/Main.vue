@@ -22,13 +22,15 @@
 
     <div class="main__banner-bottom">
       <div class="main__banner-bottom-btn">
+        
         <img src="/src/img/png/main__btn.png">
-        <p>Хочешь приятную и качественную вещь</p>
+        <p id="p1">Хочешь приятную и качественную вещь</p>
         <p>мы подскажем где ее 
           <my-button class="main__banner-btn"> 
             <router-link to="/catalog">заказать</router-link>
           </my-button>
         </p>
+        
       </div>
     </div>
 
@@ -77,6 +79,9 @@
     margin-top: 6.75rem;
     display: flex;
     justify-content: space-between;
+    font-family: "Didact Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background: #F2BDAE99;
   }
 
@@ -97,6 +102,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Didact Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background: url(@/img/png/main__img2.png) no-repeat;
   }
 
@@ -117,6 +125,14 @@
     position: absolute;
     bottom: -7%;
     left: 0;
+  }
+
+  .main__banner-bottom-btn p{
+    position: absolute;
+  }
+
+  #p1{
+    top: 30%;
   }
 
   .main__banner-bottom-btn a{

@@ -18,7 +18,10 @@
   .about__info-block{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .about__info-block p{

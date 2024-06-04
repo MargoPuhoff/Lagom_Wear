@@ -57,6 +57,9 @@
     padding: 1rem;
     display: flex;
     align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .card__item__id-img{

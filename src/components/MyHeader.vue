@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link to="/"><div v-if="!open">LaGom Wear</div></router-link>
-    <!--добавила раздел, изменила картинку (тока это в коммит надо писать)-->
+    
     <div>
       <ul class="menu__desktop">
         
@@ -15,7 +15,7 @@
         </li></router-link>
         
       </ul>
-      <!--добавила раздел-->
+      
       <div class="menu__mobile">
         <a href="#" 
           class="header__menu"
@@ -46,7 +46,7 @@
 </script>
 
 <style scoped>
-  /* добавила своиства, изменила размеры (это тоже лучше в коммит писать)*/
+
   .header{
     padding: 0.7em 10%;
     display: flex;
@@ -54,8 +54,9 @@
     align-items: center;
     font-size: 1rem;
     text-transform: uppercase;
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-weight: 300;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     color: white;
     background: rgba(113, 65, 51, 1);
   }
@@ -93,7 +94,7 @@
   }
   
 /* Адаптив для меню */
-  /*изменила размер адаптива, по меню*/
+
   @media screen and (max-width: 935px) {
     
     .menu__desktop{

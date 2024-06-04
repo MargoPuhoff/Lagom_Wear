@@ -37,7 +37,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1rem;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     color: white;
     background: rgba(113, 65, 51, 1);  
   }

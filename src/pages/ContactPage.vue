@@ -27,6 +27,9 @@
     justify-content: center;
     align-items: center;
     font-size: 9.3rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     border-bottom: 2px solid linear-gradient(#F8DAD1 to #714133);
     color: #252020;
     background: #F8DAD1;
