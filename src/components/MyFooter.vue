@@ -2,8 +2,8 @@
   <div class="footer">
     
     <div class="footer__icon">
-      <img src="@/img/icons/telegram-icon.svg">
-      <img src="@/img/icons/vk-icon.svg">
+      <img src="@/img/svg/tg.svg">
+      <img src="@/img/svg/vk.svg">
     </div>
     
     <div class="footer__menu">

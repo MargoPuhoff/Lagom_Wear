@@ -51,9 +51,13 @@
 
   /* Здесь width НЕЛЬЗЯ изменять. Ломается адаптив*/
   .card__item{
-    padding: 0 2rem 6rem;
+    padding-bottom: 6rem;
     width: 25rem;
     cursor: pointer;
+  }
+  
+  .card__item-img{
+    height: 35rem;
   }
   
   .card__item-img img{
