@@ -5,6 +5,14 @@
     <!-- Здесь баннер -->
     <div class="main__banner">
     </div>
+    <div class="main__banner-second">
+      <div class="main__banner-text">
+        <img src="/src/img/png/main__text.png">
+      </div>
+      <div>
+        <img src="/src/img/png/main__img3.png">
+      </div>
+    </div>
   
     <div class="main__about">
       <div class="main__about-text">
@@ -51,6 +59,9 @@
 </script>
 
 <style scoped>
+  .main{
+    background: #F2BDAE;
+  }
   .main__banner{
     height: 100vh;
     position: relative;
@@ -75,14 +86,26 @@
     color:black;
   }
 
+  .main__banner-second{
+    height: 290vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(@/img/png/main__banner2.png) 100% no-repeat;
+  }
+
+  .main__banner-text{
+    padding-bottom: 8.25rem;
+  }
+  
   .main__about{
-    margin-top: 6.75rem;
     display: flex;
     justify-content: space-between;
     font-family: "Didact Gothic", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background: #F2BDAE99;
+    background: #F8DAD1;
   }
 
   .main__about-text{
