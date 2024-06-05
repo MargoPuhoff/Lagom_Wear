@@ -32,5 +32,16 @@
   .left {
     flex-direction: row-reverse; /* меняем порядок элементов */
   }
+
+  @media screen and (max-width: 935px) {
+    .about__info-block{
+      padding-bottom: 4rem;
+      flex-direction: column;
+    }
+
+    .about__info-block p{
+      padding-bottom: 4rem;
+    }
+  }
   
 </style>

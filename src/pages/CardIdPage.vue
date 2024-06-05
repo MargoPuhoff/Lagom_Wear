@@ -3,7 +3,8 @@
   <!-- Здесь карточка товара (смотрит по id)-->
   
   
-  <div class="card__item__id">  
+  <div class="card__item__id">
+    
     <div class="card__item__id-img">
       <img :src="item.imgUrl"/>
     </div>
@@ -100,5 +101,11 @@
   .discript{
     line-height: 100%;
     font-size: 2rem;
+  }
+
+  @media screen and (max-width: 935px) {
+    .card__item__id{
+      flex-direction: column-reverse;
+    }
   }
 </style>

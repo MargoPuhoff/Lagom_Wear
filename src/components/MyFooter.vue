@@ -75,4 +75,10 @@
     padding-left: 10rem;
     font-size: 0.8rem;
   }
+
+  @media screen and (max-width: 935px) {
+    ul, .footer__info{
+      flex-direction: column;
+    }
+  }
 </style>
