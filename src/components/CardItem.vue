@@ -39,6 +39,7 @@
     size: String,
     discount: String,
     old_price: String,
+    discript: String,
     isFavorite: Boolean,
     onClickFavorite: Function
   });

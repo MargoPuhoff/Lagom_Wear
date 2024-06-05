@@ -1,15 +1,19 @@
 <template>
   <MyHeader/>
   <!-- Здесь карточка товара (смотрит по id)-->
-  <div class="card__item__id">
-    
+  
+  
+  <div class="card__item__id">  
     <div class="card__item__id-img">
       <img :src="item.imgUrl"/>
     </div>
     <div class="card__item__id-p">
-      <p>{{ item.size }}</p>
       <b>{{ item.title }}</b>
-      <p>{{ item.price }}</p>
+      <p>Размеры: {{ item.size }}</p>
+      <p class="discript">{{item.discript}}</p>
+      <span class="price">{{ item.price }}</span>
+      <span class="old_price">{{ item.old_price}}</span>
+      <span class="price">{{ item.discount }}</span>
     </div>
     
   </div>
@@ -18,11 +22,12 @@
 </template>
     
 <script setup>
-  
+
   import { ref, onMounted } from 'vue';
   import { useRoute } from 'vue-router';
   import MyFooter from "@/components/MyFooter.vue"
   import MyHeader from "@/components/MyHeader.vue"
+  
   import axios from "axios"
 
   const productId = ref(0);
@@ -63,7 +68,7 @@
   }
 
   .card__item__id-img{
-    width: 40%;
+    width: 30%;
   }
 
   .card__item__id-img img{
@@ -71,6 +76,29 @@
   }
 
   .card__item__id-p{
-    margin-left: 1rem;
+    margin-left: 2rem;
+    font-size: 2.5rem;
+    line-height: 180%;
+    align-self: stretch;
+  }
+
+  .card__item__id-p b{
+    font-size: 3rem;
+  }
+
+  .price{
+    color: #CF2929;
+  }
+
+  .old_price{
+    padding: 0 10px;
+    font-size: 2rem;
+    text-decoration: line-through;
+    color: #7C7C7C;
+  }
+
+  .discript{
+    line-height: 100%;
+    font-size: 2rem;
   }
 </style>
